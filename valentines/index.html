@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        img {
+            width: 200px;
+            height: auto;
+        }
+        h1 {
+            margin-top: 20px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .btn-group {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn-yes {
+            margin-top: 10px;
+            transition: transform 0.3s ease;
+            transform-origin: center top; /* Keeps the button below the text */
+        }
+    </style>
+</head>
+<body>
+    <img src="https://media.tenor.com/UglpzxRv08QAAAAM/please-cute-bear.gif" alt="Cute Teddy Bear">
+    <h1>Would you be my valentine?</h1>
+    <div class="btn-group">
+        <button class="btn btn-success btn-yes" onclick="showThankYou()">Yes</button>
+        <button class="btn btn-danger btn-no" onclick="makeYesButtonBigger()">No</button>
+    </div>
+
+    <script>
+        let scaleFactor = 1.2; // Initial scale factor
+
+        function makeYesButtonBigger() {
+            const yesButton = document.querySelector('.btn-yes');
+            scaleFactor += 0.2; // Increase the scale factor by 0.2 each time
+            yesButton.style.transform = `scale(${scaleFactor})`;
+        }
+
+        function showThankYou() {
+            window.location.href = "thankyou.html";
+        }
+    </script>
+</body>
+</html>
